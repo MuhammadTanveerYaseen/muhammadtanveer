@@ -25,7 +25,7 @@ const Hero = () => {
                 <span className="gradient-text">Go High Level</span>
                 <br />
                 Services by{" "}
-                <span className="text-primary">JK Funnels</span>
+                <span className="text-primary">Muhammad Tanveer</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
                 Specifically for your High Level.

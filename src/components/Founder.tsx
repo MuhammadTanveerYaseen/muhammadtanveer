@@ -11,7 +11,7 @@ const Founder = () => {
             <div className="order-2 lg:order-1 space-y-6 animate-fade-in">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Hi there, I'm <span className="gradient-text">Joshan!</span>
+                  Hi there, I'm <span className="gradient-text">Muhammad Tanveer!</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   As a certified GoHighLevel Expert and Funnel Strategist, I've helped hundreds of businesses 
@@ -35,7 +35,7 @@ const Founder = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl rounded-full" />
                 <img 
                   src={founderImage} 
-                  alt="Joshan - Founder of JK Funnels"
+                  alt="Muhammad Tanveer - GoHighLevel Expert"
                   className="relative z-10 w-full max-w-sm rounded-3xl shadow-2xl border-4 border-primary/20"
                 />
               </div>
