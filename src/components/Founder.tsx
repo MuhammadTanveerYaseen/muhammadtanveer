@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mail } from "lucide-react";
-import founderImage from "@/assets/founder-joshan.jpg";
+const founderImageSrc = "download.png";
 
 const Founder = () => {
   return (
@@ -34,7 +34,7 @@ const Founder = () => {
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl rounded-full" />
                 <img 
-                  src={founderImage} 
+                  src={founderImageSrc} 
                   alt="Muhammad Tanveer - GoHighLevel Expert"
                   className="relative z-10 w-full max-w-sm rounded-3xl shadow-2xl border-4 border-primary/20"
                 />

@@ -1,4 +1,8 @@
+"use client";
+import React from "react";
 import { BarChart3, TrendingUp, PieChart, Activity } from "lucide-react";
+import AutoCarousel from "@/components/AutoCarousel";
+import Image from "next/image";
 
 const dashboardFeatures = [
   {
@@ -64,6 +68,7 @@ const CustomDashboard = () => {
           </div>
 
           {/* Right side - Dashboard Preview */}
+
           <div className="animate-fade-in" style={{ animationDelay: "200ms" }}>
             <div className="glass-card rounded-3xl p-8 hover:shadow-[0_0_60px_hsl(240_94%_49%/0.4)] transition-all duration-500">
               <div className="space-y-6">
@@ -79,19 +84,14 @@ const CustomDashboard = () => {
 
                 {/* Dashboard mockup content */}
                 <div className="space-y-4">
-                  {/* Stats row */}
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="bg-muted/20 rounded-xl p-4 border border-primary/10">
-                      <div className="text-sm text-muted-foreground mb-1">Total Revenue</div>
-                      <div className="text-2xl font-bold text-primary">$127,500</div>
-                      <div className="text-xs text-green-500 mt-1">↑ 23.5%</div>
-                    </div>
-                    <div className="bg-muted/20 rounded-xl p-4 border border-secondary/10">
-                      <div className="text-sm text-muted-foreground mb-1">Conversions</div>
-                      <div className="text-2xl font-bold text-secondary">1,234</div>
-                      <div className="text-xs text-green-500 mt-1">↑ 18.2%</div>
-                    </div>
-                  </div>
+                  {/* Auto image slider */}
+                  <AutoCarousel className="rounded-xl overflow-hidden border border-border/50">
+                    {["/dashboard/67011e5ec0c2678f5a9defbd.png","/dashboard/67011e62fbe4fd3f68bc0271.png","/dashboard/67011e67fbe4fdd9f1bc0276.png","/dashboard/67011e6cfbe4fdbc34bc0277.png"].map((src, i) => (
+                      <div key={i} className="w-full h-56 md:h-72 lg:h-80 bg-muted/30 relative">
+                        <Image src={src} alt="Dashboard preview" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-contain" />
+                      </div>
+                    ))}
+                  </AutoCarousel>
 
                   {/* Chart mockup */}
                   <div className="bg-muted/20 rounded-xl p-6 border border-primary/10">
@@ -99,28 +99,6 @@ const CustomDashboard = () => {
                       {[40, 65, 45, 80, 55, 90, 70].map((height, i) => (
                         <div key={i} className="flex-1 bg-gradient-to-t from-primary to-secondary rounded-t-lg opacity-80 hover:opacity-100 transition-opacity" style={{ height: `${height}%` }} />
                       ))}
-                    </div>
-                  </div>
-
-                  {/* Progress bars */}
-                  <div className="space-y-3">
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-muted-foreground">Lead Generation</span>
-                        <span className="text-primary font-semibold">87%</span>
-                      </div>
-                      <div className="h-2 bg-muted/30 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-primary to-secondary rounded-full" style={{ width: '87%' }} />
-                      </div>
-                    </div>
-                    <div>
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-muted-foreground">Conversion Rate</span>
-                        <span className="text-secondary font-semibold">72%</span>
-                      </div>
-                      <div className="h-2 bg-muted/30 rounded-full overflow-hidden">
-                        <div className="h-full bg-gradient-to-r from-secondary to-primary rounded-full" style={{ width: '72%' }} />
-                      </div>
                     </div>
                   </div>
                 </div>

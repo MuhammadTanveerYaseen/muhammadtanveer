@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Phone } from "lucide-react";
-import heroCharacter from "@/assets/hero-character.png";
+import { Phone, MessageCircle } from "lucide-react";
+const heroCharacterSrc = "download.png";
 
 const Hero = () => {
   return (
@@ -30,16 +30,24 @@ const Hero = () => {
               <p className="text-xl md:text-2xl text-muted-foreground font-light">
                 Specifically for your High Level.
               </p>
+              <p className="text-base md:text-lg text-muted-foreground">
+                We build and integrate on: GHL, ClickFunnels, Systeme.io, Kajabi, Kartra,
+                n8n, Zapier, and Make.com
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-[0_0_40px_hsl(240_94%_49%/0.3)] hover:shadow-[0_0_60px_hsl(240_94%_49%/0.5)] transition-all">
-                Book a Call
-                <Phone className="ml-2 h-5 w-5" />
+                <a href="tel:+923236229684" className="flex items-center">
+                  Call
+                  <Phone className="ml-2 h-5 w-5" />
+                </a>
               </Button>
               <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 border-primary/50 hover:bg-primary/10">
-                Let's Talk
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <a href="https://wa.me/923236229684" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                  WhatsApp
+                  <MessageCircle className="ml-2 h-5 w-5" />
+                </a>
               </Button>
             </div>
           </div>
@@ -49,9 +57,9 @@ const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
               <img 
-                src={heroCharacter} 
+                src={heroCharacterSrc} 
                 alt="Professional business consultant" 
-                className="relative z-10 w-full max-w-md animate-float drop-shadow-2xl"
+                className="relative z-10 w-full max-w-lg md:max-w-xl lg:max-w-2xl animate-float drop-shadow-2xl"
               />
             </div>
           </div>

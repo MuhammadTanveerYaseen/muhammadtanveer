@@ -41,11 +41,17 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Get in Touch</h3>
             <div className="space-y-3">
               <a 
-                href="mailto:[email protected]" 
+                href="mailto:muhammadtanveer0135@gmail.com" 
                 className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>[email protected]</span>
+                <span>muhammadtanveer0135@gmail.com</span>
+              </a>
+              <a 
+                href="tel:+923236229684" 
+                className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors group"
+              >
+                <span>+92 323 6229684</span>
               </a>
               <div className="flex space-x-4 pt-2">
                 {socialLinks.map((social, index) => {
