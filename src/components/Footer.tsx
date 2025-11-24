@@ -45,7 +45,7 @@ const Footer = () => {
                 className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors group"
               >
                 <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span>muhammadtanveer0135@gmail.com</span>
+                <span>areejfatima1728@gmail.com</span>
               </a>
               <a 
                 href="tel:+923236229684" 
