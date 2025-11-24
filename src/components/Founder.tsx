@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail } from "lucide-react";
 
 const Founder = () => {
@@ -33,15 +32,13 @@ const Founder = () => {
             <div className="order-1 lg:order-2 flex justify-center animate-fade-in" style={{ animationDelay: "200ms" }}>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl rounded-full" />
-                <Avatar className="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 border-4 border-primary/20 shadow-2xl">
-                  <AvatarImage 
-                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=AREEJFATIMA&topType=Hijab&accessoriesType=Blank&hairColor=000000&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=262e33&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=FFDBB4&backgroundColor=b6e3f4"
+                <div className="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-4 border-primary/20 shadow-2xl">
+                  <img 
+                    src="/dp.jpg"
                     alt="AREEJFATIMA - GoHighLevel Expert"
+                    className="w-full h-full object-cover"
                   />
-                  <AvatarFallback className="text-6xl font-bold bg-gradient-to-br from-primary to-secondary text-white">
-                    AF
-                  </AvatarFallback>
-                </Avatar>
+                </div>
               </div>
             </div>
           </div>
