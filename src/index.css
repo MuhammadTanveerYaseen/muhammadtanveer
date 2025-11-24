@@ -50,15 +50,37 @@ All colors MUST be HSL.
 @layer base {
   * {
     @apply border-border;
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Poppins', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
   }
 
   html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Prevent pull-to-refresh on mobile */
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  /* Smooth transitions for all interactive elements */
+  a, button, input, textarea, select {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Better touch targets for mobile */
+  button, a {
+    touch-action: manipulation;
   }
 }
 
@@ -76,6 +98,22 @@ All colors MUST be HSL.
     }
   }
 
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .gradient-text {
     background: linear-gradient(135deg, hsl(240 94% 49%), hsl(195 100% 50%));
     -webkit-background-clip: text;
@@ -86,6 +124,37 @@ All colors MUST be HSL.
   .glass-card {
     background: linear-gradient(135deg, hsl(220 25% 15% / 0.8), hsl(220 20% 18% / 0.6));
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border: 1px solid hsl(220 15% 25%);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Apple-like smooth scrolling */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better mobile touch feedback */
+  .touch-feedback:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+
+  /* Safe area insets for notched devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
   }
 }

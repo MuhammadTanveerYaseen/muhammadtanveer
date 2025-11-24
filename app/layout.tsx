@@ -1,11 +1,19 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import HeadScript from "./head-script";
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
-  themeColor: "#1a1a2e",
+  minimumScale: 1,
+  userScalable: true,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#1a1a2e" },
+    { media: "(prefers-color-scheme: dark)", color: "#1a1a2e" }
+  ],
+  colorScheme: "dark",
+  viewportFit: "cover",
 };
 
 export const metadata: Metadata = {
@@ -73,6 +81,11 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "Areej Fatima",
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -85,6 +98,7 @@ export const metadata: Metadata = {
     other: [
       { rel: "android-chrome-192x192", url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
       { rel: "android-chrome-512x512", url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+      { rel: "mask-icon", url: "/apple-touch-icon.png", color: "#1a1a2e" },
     ],
   },
   manifest: "/site.webmanifest",
@@ -94,7 +108,8 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className="overscroll-none">
+        <HeadScript />
         {children}
       </body>
     </html>
