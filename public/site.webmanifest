@@ -32,12 +32,13 @@
   "background_color": "#0f0f1e",
   "display": "standalone",
   "display_override": ["standalone", "fullscreen", "minimal-ui"],
-  "start_url": "/",
+  "start_url": "/?utm_source=pwa",
   "scope": "/",
   "orientation": "portrait-primary",
   "prefer_related_applications": false,
   "categories": ["business", "productivity", "utilities"],
-  "screenshots": [],
+  "dir": "ltr",
+  "lang": "en",
   "shortcuts": [
     {
       "name": "Services",
@@ -47,7 +48,8 @@
       "icons": [
         {
           "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     },
@@ -59,13 +61,12 @@
       "icons": [
         {
           "src": "/android-chrome-192x192.png",
-          "sizes": "192x192"
+          "sizes": "192x192",
+          "type": "image/png"
         }
       ]
     }
-  ],
-  "iarc_rating_id": "",
-  "related_applications": []
+  ]
 }
 
 
