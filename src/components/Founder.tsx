@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Mail } from "lucide-react";
-const founderImageSrc = "download.png";
 
 const Founder = () => {
   return (
@@ -11,7 +11,7 @@ const Founder = () => {
             <div className="order-2 lg:order-1 space-y-6 animate-fade-in">
               <div>
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Hi there, I'm <span className="gradient-text">Muhammad Tanveer!</span>
+                  Hi there, I'm <span className="gradient-text">AREEJFATIMA!</span>
                 </h2>
                 <p className="text-lg text-muted-foreground leading-relaxed mb-4">
                   As a certified GoHighLevel Expert and Funnel Strategist, I've helped hundreds of businesses 
@@ -33,11 +33,15 @@ const Founder = () => {
             <div className="order-1 lg:order-2 flex justify-center animate-fade-in" style={{ animationDelay: "200ms" }}>
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 blur-3xl rounded-full" />
-                <img 
-                  src={founderImageSrc} 
-                  alt="Muhammad Tanveer - GoHighLevel Expert"
-                  className="relative z-10 w-full max-w-sm rounded-3xl shadow-2xl border-4 border-primary/20"
-                />
+                <Avatar className="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 border-4 border-primary/20 shadow-2xl">
+                  <AvatarImage 
+                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=AREEJFATIMA&topType=Hijab&accessoriesType=Blank&hairColor=000000&facialHairType=Blank&clotheType=BlazerShirt&clotheColor=262e33&eyeType=Happy&eyebrowType=DefaultNatural&mouthType=Smile&skinColor=FFDBB4&backgroundColor=b6e3f4"
+                    alt="AREEJFATIMA - GoHighLevel Expert"
+                  />
+                  <AvatarFallback className="text-6xl font-bold bg-gradient-to-br from-primary to-secondary text-white">
+                    AF
+                  </AvatarFallback>
+                </Avatar>
               </div>
             </div>
           </div>

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Phone, MessageCircle } from "lucide-react";
-const heroCharacterSrc = "download.png";
+import { Phone, MessageCircle, ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -17,50 +16,38 @@ const Hero = () => {
       </div>
 
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left content */}
-          <div className="text-center lg:text-left space-y-8 animate-fade-in">
-            <div className="space-y-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Centered content */}
+          <div className="text-center space-y-8 animate-fade-in">
+            <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
                 <span className="gradient-text">Go High Level</span>
                 <br />
                 Services by{" "}
-                <span className="text-primary">Muhammad Tanveer</span>
+                <span className="text-primary">AREEJFATIMA</span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground font-light">
-                Specifically for your High Level.
+              <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto">
+                Transform your business with powerful automation and integrations
               </p>
-              <p className="text-base md:text-lg text-muted-foreground">
-                We build and integrate on: GHL, ClickFunnels, Systeme.io, Kajabi, Kartra,
-                n8n, Zapier, and Make.com
+              <p className="text-base md:text-lg text-muted-foreground max-w-xl mx-auto">
+                Expert integrations for GHL, ClickFunnels, Systeme.io, Kajabi, Kartra, n8n, Zapier, and Make.com
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-[0_0_40px_hsl(240_94%_49%/0.3)] hover:shadow-[0_0_60px_hsl(240_94%_49%/0.5)] transition-all">
-                <a href="tel:+923236229684" className="flex items-center">
-                  Call
-                  <Phone className="ml-2 h-5 w-5" />
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-[0_0_40px_hsl(240_94%_49%/0.3)] hover:shadow-[0_0_60px_hsl(240_94%_49%/0.5)] transition-all group">
+                <a href="tel:+923236229684" className="flex items-center gap-2">
+                  <Phone className="h-5 w-5" />
+                  Call Now
+                  <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </a>
               </Button>
-              <Button size="lg" variant="outline" className="text-lg px-8 py-6 rounded-full border-2 border-primary/50 hover:bg-primary/10">
-                <a href="https://wa.me/923236229684" target="_blank" rel="noopener noreferrer" className="flex items-center">
+              <Button size="lg" variant="outline" className="text-lg px-10 py-7 rounded-full border-2 border-primary/50 hover:bg-primary/10 hover:border-primary transition-all">
+                <a href="https://wa.me/923236229684" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+                  <MessageCircle className="h-5 w-5" />
                   WhatsApp
-                  <MessageCircle className="ml-2 h-5 w-5" />
                 </a>
               </Button>
-            </div>
-          </div>
-
-          {/* Right content - Character */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute inset-0 bg-primary/20 blur-3xl rounded-full" />
-              <img 
-                src={heroCharacterSrc} 
-                alt="Professional business consultant" 
-                className="relative z-10 w-full max-w-lg md:max-w-xl lg:max-w-2xl animate-float drop-shadow-2xl"
-              />
             </div>
           </div>
         </div>

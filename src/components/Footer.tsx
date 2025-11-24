@@ -16,9 +16,9 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">MT</span>
+                <span className="text-2xl font-bold text-white">AF</span>
               </div>
-              <span className="text-xl font-bold">Muhammad Tanveer</span>
+              <span className="text-xl font-bold">AREEJFATIMA</span>
             </div>
             <p className="text-muted-foreground">
               Professional Go HighLevel services to transform your business with high-converting funnels and automation.
@@ -74,7 +74,7 @@ const Footer = () => {
 
         {/* Bottom bar */}
         <div className="pt-8 border-t border-border/50 text-center text-muted-foreground">
-          <p>© 2025 Muhammad Tanveer. All Rights Reserved.</p>
+          <p>© 2025 AREEJFATIMA. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
