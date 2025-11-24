@@ -1,0 +1,23 @@
+{
+  "name": "Areej Fatima - Go High Level Expert",
+  "short_name": "Areej Fatima",
+  "description": "Professional Go High Level services by Areej Fatima. Expert integrations and automation solutions.",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#1a1a2e",
+  "background_color": "#0f0f1e",
+  "display": "standalone",
+  "start_url": "/",
+  "orientation": "portrait-primary"
+}
+
