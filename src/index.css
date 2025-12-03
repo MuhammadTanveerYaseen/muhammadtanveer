@@ -2,48 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Premium Deep Space Design System
+   All colors, gradients, fonts, and animations defined here.
+   All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 220 25% 10%;
+    /* Deep Space Background - Rich, dark blacks */
+    --background: 230 30% 6%;
     --foreground: 0 0% 100%;
 
-    --card: 220 20% 15%;
+    /* Glass Card System */
+    --card: 230 25% 10% / 0.4;
     --card-foreground: 0 0% 100%;
 
-    --popover: 220 20% 15%;
+    --popover: 230 25% 10% / 0.95;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 240 94% 49%;
+    /* Premium Neon Accents */
+    --primary: 265 85% 58%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 195 100% 50%;
+    --secondary: 190 95% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 25%;
-    --muted-foreground: 0 0% 70%;
-
-    --accent: 240 94% 49%;
+    --accent: 285 80% 65%;
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* Subtle UI Elements */
+    --muted: 230 20% 20% / 0.5;
+    --muted-foreground: 0 0% 75%;
+
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 25%;
-    --input: 220 15% 25%;
-    --ring: 240 94% 49%;
+    --border: 230 20% 25% / 0.3;
+    --input: 230 20% 15% / 0.6;
+    --ring: 265 85% 58% / 0.5;
 
-    --radius: 1rem;
+    --radius: 1.25rem;
 
-    /* Custom design tokens */
-    --gradient-cosmic: linear-gradient(135deg, hsl(240 80% 10%), hsl(240 94% 49%), hsl(195 100% 50%));
-    --gradient-card: linear-gradient(135deg, hsl(220 25% 15% / 0.8), hsl(220 20% 18% / 0.6));
-    --shadow-glow: 0 0 40px hsl(240 94% 49% / 0.3);
-    --shadow-card: 0 8px 32px hsl(0 0% 0% / 0.4);
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Premium Design Tokens */
+    --gradient-cosmic: linear-gradient(135deg, hsl(265 85% 15%), hsl(265 85% 58%), hsl(190 95% 55%));
+    --gradient-hero: radial-gradient(circle at 20% 50%, hsl(265 85% 25% / 0.4), transparent 50%),
+      radial-gradient(circle at 80% 50%, hsl(190 95% 25% / 0.3), transparent 50%),
+      linear-gradient(180deg, hsl(230 30% 6%), hsl(230 30% 8%));
+    --gradient-glass: linear-gradient(135deg, hsl(230 25% 15% / 0.15), hsl(230 25% 25% / 0.05));
+
+    /* Glow & Shadow System */
+    --glow-primary: 0 0 60px hsl(265 85% 58% / 0.4);
+    --glow-secondary: 0 0 60px hsl(190 95% 55% / 0.3);
+    --glow-accent: 0 0 40px hsl(285 80% 65% / 0.25);
+    --shadow-glass: 0 8px 32px hsl(0 0% 0% / 0.5),
+      inset 0 1px 1px hsl(0 0% 100% / 0.1);
+    --shadow-card: 0 20px 60px hsl(0 0% 0% / 0.6);
+
+    /* Smooth Transitions */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-spring: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 }
 
@@ -74,74 +91,154 @@ All colors MUST be HSL.
   }
 
   /* Smooth transitions for all interactive elements */
-  a, button, input, textarea, select {
+  a,
+  button,
+  input,
+  textarea,
+  select {
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   /* Better touch targets for mobile */
-  button, a {
+  button,
+  a {
     touch-action: manipulation;
   }
 }
 
 @layer utilities {
+
+  /* Float Animation */
   .animate-float {
     animation: float 6s ease-in-out infinite;
   }
 
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
   }
 
+  /* Fade In Animation */
   .animate-fade-in {
-    animation: fadeIn 0.6s ease-out forwards;
+    animation: fadeIn 0.8s ease-out forwards;
     opacity: 0;
   }
 
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px);
     }
+
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
 
+  /* Slide Up Animation */
+  .animate-slide-up {
+    animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Glow Pulse Animation */
+  .animate-glow-pulse {
+    animation: glowPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes glowPulse {
+
+    0%,
+    100% {
+      filter: drop-shadow(0 0 20px hsl(265 85% 58% / 0.3));
+    }
+
+    50% {
+      filter: drop-shadow(0 0 40px hsl(265 85% 58% / 0.6));
+    }
+  }
+
+  /* Gradient Text Effects */
   .gradient-text {
-    background: linear-gradient(135deg, hsl(240 94% 49%), hsl(195 100% 50%));
+    background: linear-gradient(135deg, hsl(265 85% 58%), hsl(190 95% 55%));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
-  .glass-card {
-    background: linear-gradient(135deg, hsl(220 25% 15% / 0.8), hsl(220 20% 18% / 0.6));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid hsl(220 15% 25%);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  .gradient-text-accent {
+    background: linear-gradient(135deg, hsl(285 80% 65%), hsl(265 85% 58%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
-  /* Apple-like smooth scrolling */
+  /* Premium Glassmorphism */
+  .glass-card {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(0 0% 100% / 0.1);
+    box-shadow: var(--shadow-glass);
+    transition: var(--transition-smooth);
+  }
+
+  .glass-card:hover {
+    background: linear-gradient(135deg, hsl(230 25% 15% / 0.25), hsl(230 25% 25% / 0.1));
+    border-color: hsl(265 85% 58% / 0.3);
+    box-shadow: var(--shadow-glass), var(--glow-primary);
+    transform: translateY(-4px);
+  }
+
+  .glass-button {
+    background: linear-gradient(135deg, hsl(265 85% 58% / 0.15), hsl(190 95% 55% / 0.1));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid hsl(265 85% 58% / 0.3);
+    box-shadow: 0 4px 16px hsl(265 85% 58% / 0.2);
+    transition: var(--transition-spring);
+  }
+
+  .glass-button:hover {
+    background: linear-gradient(135deg, hsl(265 85% 58% / 0.3), hsl(190 95% 55% / 0.2));
+    border-color: hsl(265 85% 58% / 0.6);
+    box-shadow: var(--glow-primary);
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* Smooth Scrolling */
   .smooth-scroll {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
   }
 
-  /* Better mobile touch feedback */
+  /* Touch Feedback */
   .touch-feedback:active {
-    transform: scale(0.98);
+    transform: scale(0.97);
     transition: transform 0.1s ease;
   }
 
-  /* Safe area insets for notched devices */
+  /* Safe Area Insets */
   .safe-top {
     padding-top: env(safe-area-inset-top);
   }
@@ -156,5 +253,14 @@ All colors MUST be HSL.
 
   .safe-right {
     padding-right: env(safe-area-inset-right);
+  }
+
+  /* Magnetic Hover Effect */
+  .magnetic-hover {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .magnetic-hover:hover {
+    transform: scale(1.05);
   }
 }

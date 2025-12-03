@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import HeadScript from "./head-script";
 import PWAInstaller from "@/components/PWAInstaller";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning>
       <body className="overscroll-none">
         <HeadScript />
+        <CursorSpotlight />
         <PWAInstaller />
         {children}
       </body>
